@@ -1,0 +1,56 @@
+
+body {
+  background-image: url('./../img/hospital-building-001-global.webp');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.btn-edit,
+.btn-closed {
+  cursor: pointer;
+  width: 34px;
+  border: none;
+  background: none;
+}
+
+.info-team {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  margin-left: 1rem;
+}
+
+.card {
+  height: fit-content;
+  margin: 15px;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 67.7rem;
+}
+
+.filter {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.invisible {
+  display: none;
+}
