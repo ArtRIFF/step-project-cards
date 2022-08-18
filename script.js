@@ -33,6 +33,45 @@ btnCreateCard.addEventListener("click", () => {
   modalCreateCard.showModalCreateCard();
 });
 
+//Filter  -немає статусу done open
+document.querySelector('.btn-search').addEventListener('click',()=>{
+  const priorityValue = document.querySelector('.search-priority').value;
+  const descValue = document.querySelector('.search-desc').value;
+  const arrayBase = JSON.parse(localStorage.getItem("localBase"));
+  let resoultArray;
+  if (descValue) {
+    resoultArray = arrayBase.filter(card => {
+      return (card.title.includes(descValue)||card.description.includes(descValue))&&card.priority === priorityValue;
+   }) 
+  } else {
+    resoultArray = arrayBase.filter(card => card.priority === priorityValue);
+  }
+  document.querySelector('.cards-wrapper').innerText = "";
+  resoultArray.forEach(client =>{
+    const card = new UserCardRender(client);
+    card.createCard();
+    card.showMoreInfo();
+    if (modalAvtorization.getToken()) {
+      card.deleteCardMod(modalAvtorization.getToken()); 
+    }
+  })
+});
+
+// let obj = {
+//   "title": "323333333333333333",
+//   "description": "324324324234234",
+//   "priority": "Low",
+//   "fullName": "322222222222222",
+//   "doctor": "Cardiologist",
+//   "age": "34",
+//   "diseases": "2222222222222",
+//   "weight": "12",
+//   "presure": "123434",
+//   "id": 74177
+// }
+
+// console.log(obj.title.includes("323333333333333333"));
+
 // Функція для отримання карток з серверу(для тестів)
 
 // const showAllCards = sendRequest(
