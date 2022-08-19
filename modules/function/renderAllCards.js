@@ -1,5 +1,6 @@
 import sendRequest from "./sendRequest.js";
 import UserCardRender from "./../modalForm/UserCardRender.js";
+import draqAndDropFunc from "./draqAndDropFunc.js";
 function renderAllCards(token) {
   sendRequest("https://ajax.test-danit.com/api/v2/cards", "GET", {
     headers: {
@@ -19,6 +20,7 @@ function renderAllCards(token) {
           card.showMoreInfo();//<--
           card.deleteCardMod(token);//<--
         });
+        draqAndDropFunc();
       }
       localStorage.setItem("localBase", JSON.stringify(localBase));
     })

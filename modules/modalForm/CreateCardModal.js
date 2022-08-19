@@ -1,6 +1,7 @@
 import sendRequest from "./../function/sendRequest.js";
 import Modal from "./../modalForm/Modal.js";
 import UserCardRender from "./../modalForm/UserCardRender.js";
+import draqAndDropFunc from "./../function/draqAndDropFunc.js";
 
 import {
   validateDesc,
@@ -185,6 +186,7 @@ class CreateCardModal extends Modal {
         document.querySelector(".message-nocard")?.remove();
         arrayBase.push(card);
         localStorage.setItem("localBase", JSON.stringify(arrayBase));
+        draqAndDropFunc();
       })
       .catch((error) => console.error(error.message));
   }

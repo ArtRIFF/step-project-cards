@@ -3,6 +3,7 @@ import sendRequest from "./../function/sendRequest.js";
 import Modal from "./../modalForm/Modal.js";
 import CreateCardModal from "./CreateCardModal.js";
 import renderAllCards from "./../function/renderAllCards.js";
+import draqAndDropFunc from "./..//function/draqAndDropFunc.js";
 const container = document.getElementById("section-cards");
 
 class Card {
@@ -94,6 +95,7 @@ class Card {
         localStorage.setItem("localBase", JSON.stringify(newArray));
         const buttonWrapper = e.target.closest("div .buttons-wrapper");//кривий пошук картки на сторінці через структуру
         buttonWrapper.closest(".card").remove();
+        draqAndDropFunc();
       });
     });
   }

@@ -34,6 +34,12 @@ body {
 .card {
   height: fit-content;
   margin: 15px;
+  cursor: move;
+  flex-basis: fill;
+}
+
+.card.over {
+  background-color: aqua;
 }
 
 .cards-wrapper {
